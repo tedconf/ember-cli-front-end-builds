@@ -10,20 +10,7 @@ Deploys your ember-cli app by
 
 ## Installation
 
-## Usage
-
-Available commands:
-
-  - `ember deploy` - Builds, uploads assets, notifies index.
-  - `ember deploy:assets` - Uploads assets. Note, this uses whatever is currently in `dist` folder.
-    - this command dumps twice, once to a shared dir and once to a uniq dist dir.
-  - `ember deploy:index` - Notifies back-end of new index. Note this uses whatever is currently in `dist` folder.
-
-Options:
-
-  - All commands can take an optional `--environment=[env]` flag, to determine which env of your `deploy.json` is used. Default is `production`.
-
-To get started, follow the following steps.
+## Setup
 
 ### Add a deploy.json
 
@@ -47,11 +34,11 @@ The default environment is production.
 
     // Config for index deploy task
     "index": {
-      "app": "ted-ed-lesson-creator",
+      "app": "[app name, e.g. ted-ed-lesson-creator]",
       "endpoints": [
-        "http://local.ted.com:3000/ted-ed-lesson-creator"
+        "[endpoint to notify, e.g. http://local.ted.com:3000/ted-ed-lesson-creator]"
       ],
-      "apiKey": "ee1a3e52-2aa2-4831-bf4e-92ccaf91b2ec",
+      "apiKey": "[api key to send along with back-end notification]",
     }
   }
 }
@@ -74,3 +61,16 @@ var app = new EmberApp({
   }
 });
 ```
+
+## Usage
+
+The following commands will be made available in your ember-cli project:
+
+  - `ember deploy` - Builds, uploads assets, notifies index.
+  - `ember deploy:assets` - Uploads assets. Note, this uses whatever is currently in `dist` folder.
+    - this command dumps twice, once to a shared dir and once to a uniq dist dir.
+  - `ember deploy:index` - Notifies back-end of new index. Note this uses whatever is currently in `dist` folder.
+
+Options:
+
+  - All commands can take an optional `--environment=[env]` flag, to determine which env of your `deploy.json` is used. Default is `production`.
