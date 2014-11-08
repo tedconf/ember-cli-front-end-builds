@@ -12,7 +12,7 @@ An Ember CLI addon that deploys your app by
 
 Add the following to your `package.json`
 
-    "ember-cli-static-deploy": "git+ssh://git@github.com/tedconf/ember-deploy.git",
+    "ember-cli-static-deploy": "git+ssh://git@github.com/tedconf/ember-cli-static-deploy.git#v0.0.1",
 
 then run `npm install`.
 
