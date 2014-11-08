@@ -27,8 +27,7 @@ The default environment is production.
 ```json
 {
   "production": {
-
-    // Config for assets deploy task
+    
     "assets": {
       "accessKeyId": "[your-id]",
       "secretAccessKey": "[your-key]",
@@ -38,7 +37,6 @@ The default environment is production.
       "distPrefix": "[optional, dir on S3 to put `dist` in e.g. dist-{{SHA}}]"
     },
 
-    // Config for index deploy task
     "index": {
       "app": "[app name, e.g. ted-ed-lesson-creator]",
       "endpoints": [
