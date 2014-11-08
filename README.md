@@ -1,6 +1,6 @@
 # Ember-cli-static-deploy
 
-Deploys your ember-cli app by
+An Ember CLI addon that deploys your app by
 
 1. Creating a production build of your ember-cli app
 2. Uploading your assets to S3
@@ -9,6 +9,12 @@ Deploys your ember-cli app by
 > Note: Ideally this should be a temporary project. [ember-deploy](https://github.com/LevelbossMike/ember-deploy) is an OSS project attempting to handle all reasonable deployment strategies with ember-cli. We currently do a few things differently, so once ember-deploy adopts an adapter pattern for its components, we should be able to switch over to that.
 
 ## Installation
+
+Add the following to your `package.json`
+
+    "ember-cli-static-deploy": "git+ssh://git@github.com/tedconf/ember-deploy.git",
+
+then run `npm install`.
 
 ## Setup
 
