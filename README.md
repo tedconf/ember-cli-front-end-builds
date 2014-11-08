@@ -27,7 +27,6 @@ The default environment is production.
 ```json
 {
   "production": {
-    
     "assets": {
       "accessKeyId": "[your-id]",
       "secretAccessKey": "[your-key]",
@@ -36,7 +35,6 @@ The default environment is production.
       "prefix": "[optional, dir on S3 to dump all assets]",
       "distPrefix": "[optional, dir on S3 to put `dist` in e.g. dist-{{SHA}}]"
     },
-
     "index": {
       "app": "[app name, e.g. ted-ed-lesson-creator]",
       "endpoints": [
