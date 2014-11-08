@@ -1,6 +1,7 @@
 # Ember-cli-static-deploy
 
 1. Add a `deploy.json` to the root of your ember-cli project:
+
 ```json
 {
   "production": {
@@ -21,4 +22,20 @@
     }
   }
 }
+```
+
+2. Add these lines to your `Brocfile.js`
+
+```js
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+var env = process.env.EMBER_ENV;
+var deploy = require('./deploy.json')[env];
+var prependString = deploy && deploy.assets ? deploy.assets.assetHost + '/' + deploy.assets.prefix + '/' : '';
+
+var app = new EmberApp({
+  fingerprint: {
+    prepend: prependString,
+  }
+});
 ```
