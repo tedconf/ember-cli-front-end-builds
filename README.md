@@ -1,25 +1,24 @@
 # Ember-cli-static-deploy
 
-This README outlines the details of collaborating on this Ember addon.
-
-## Installation
-
-* `git clone` this repository
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+1. Add a `deploy.json` to the root of your ember-cli project:
+```json
+{
+  "production": {
+    "assets": {
+      "accessKeyId": "[your-id]",
+      "secretAccessKey": "[your-key]",
+      "bucket": "[your-bucket]",
+      "assetHost": "[optional, e.g. https://s3.amazonaws.com/ted.conferences.ted-ed-lesson-creator]",
+      "prefix": "[optional, dir on S3 to dump all assets]",
+      "distPrefix": "[optional, dir on S3 to put `dist` in e.g. dist-{{SHA}}]"
+    },
+    "index": {
+      "app": "ted-ed-lesson-creator",
+      "endpoints": [
+        "http://local.ted.com:3000/ted-ed-lesson-creator"
+      ],
+      "apiKey": "ee1a3e52-2aa2-4831-bf4e-92ccaf91b2ec",
+    }
+  }
+}
+```

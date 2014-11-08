@@ -27,7 +27,6 @@
     "ember-cli-qunit": "0.1.0",
     "ember-data": "1.0.0-beta.10",
     "ember-export-application-global": "^1.0.0",
-    "exec-sync": "^0.1.6",
     "express": "^4.8.5",
     "glob": "^4.0.5"
   },
@@ -38,15 +37,10 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "broccoli": "^0.13.2",
-    "broccoli-gzip": "^0.2.0",
     "chalk": "^0.5.1",
-    "deployinator": "^0.5.0",
     "exec-sync": "^0.1.6",
-    "mkdirp": "^0.5.0",
-    "ncp": "^1.0.1",
-    "rimraf": "^2.2.8",
-    "rsvp": "^3.0.14",
+    "mustache": "^0.8.2",
+    "qs": "^2.3.2",
     "s3": "^4.3.1"
   }
 }
