@@ -12,11 +12,9 @@ The deploy process involves
 
 ## Installation
 
-Add the following to your `package.json`
-
-    "ember-cli-front-end-builds": "git+ssh://git@github.com/tedconf/ember-cli-front-end-builds.git#v0.0.1",
-
-then run `npm install`.
+```
+npm install --save-dev ember-cli-front-end-builds
+```
 
 ## Setup
 
