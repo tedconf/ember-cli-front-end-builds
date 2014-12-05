@@ -1,18 +1,20 @@
-# Ember-cli-static-deploy
+# ember-cli-front-end-builds
 
-An Ember CLI addon that deploys your app by
+Easily deploy your Ember CLI app to a [front_end_builds](https://github.com/tedconf/front_end_builds)-enabled Rails backend.
+
+The deploy process involves
 
 1. Creating a production build of your ember-cli app
 2. Uploading your assets to S3
-3. Notifying a back-end URL with info about the new build
+3. POST'ing to your Rails backend with info about the new build
 
-> Note: Ideally this should be a temporary project. [ember-deploy](https://github.com/LevelbossMike/ember-deploy) is an OSS project attempting to handle all reasonable deployment strategies with ember-cli. We currently do a few things differently, so once ember-deploy adopts an adapter pattern for its components, we should be able to switch over to that.
+> Note: Ideally, once [ember-deploy](https://github.com/LevelbossMike/ember-deploy) implements an adapter pattern, this project could simply become an adapter for that lib.
 
 ## Installation
 
 Add the following to your `package.json`
 
-    "ember-cli-static-deploy": "git+ssh://git@github.com/tedconf/ember-cli-static-deploy.git#v0.0.1",
+    "ember-cli-front-end-builds": "git+ssh://git@github.com/tedconf/ember-cli-front-end-builds.git#v0.0.1",
 
 then run `npm install`.
 

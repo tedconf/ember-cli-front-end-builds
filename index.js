@@ -3,7 +3,7 @@
 var commands = require('./lib/commands');
 
 module.exports = {
-  name: 'ember-cli-static-deploy',
+  name: 'ember-cli-front-end-builds',
 
   includedCommands: function() {
     return commands;
