@@ -29,8 +29,6 @@ hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
 
 ## Setup
 
-### Generating a configuration file
-
 To get started with deploy configuration simply run:
 
 ```
