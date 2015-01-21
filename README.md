@@ -1,14 +1,13 @@
 # ember-cli-front-end-builds
 
-Easily deploy your Ember CLI app to a [front_end_builds](https://github.com/tedconf/front_end_builds)-enabled Rails backend.
+Easily deploy your Ember CLI app to a [front_end_builds](https://github.com/tedconf/front_end_builds)
+Rails backend.
 
-The deploy process involves
+The deploy process involves:
 
-1. Creating a production build of your ember-cli app
+1. Creating a build of your ember-cli app
 2. Uploading your assets to S3
-3. POST'ing to your Rails backend with info about the new build
-
-> Note: Ideally, once [ember-deploy](https://github.com/LevelbossMike/ember-deploy) implements an adapter pattern, this project could simply become an adapter for that lib.
+3. Notifying your Rails backend with info about the new build
 
 ## Installation
 
@@ -16,13 +15,34 @@ The deploy process involves
 npm install --save-dev ember-cli-front-end-builds
 ```
 
+#### Backend
+
+Please make sure you have setup your Rails backend with the
+[front_end_builds](https://github.com/tedconf/front_end_builds) gem.
+
+You should also setup the admin area and add your application.
+
+#### Amazon S3
+
+You'll also need to setup a S3 bucket with [static website
+hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
+
 ## Setup
 
-### Add a deploy.json
+### Generating a configuration file
 
-Add a `deploy.json` to the root of your ember-cli project. Top-level keys are used for different deployment environments.
+To get started with deploy configuration simply run:
 
-The default environment is production.
+```
+ember deploy:setup
+```
+
+This will ask you a series questions about your application and write a
+configuration file to ``config/deploy.js``.
+
+### Explaining the configuration file.
+
+TODO
 
 ```json
 {
@@ -31,7 +51,6 @@ The default environment is production.
       "accessKeyId": "[your-id]",
       "secretAccessKey": "[your-key]",
       "bucket": "[your-s3-bucket]",
-      "assetHost": "[optional, e.g. https://s3.amazonaws.com/ted.conferences.ted-ed-lesson-creator]",
       "prefix": "[optional, dir on S3 to dump all assets]",
       "distPrefix": "[optional, dir on S3 to put `dist` in e.g. dist-{{SHA}}]"
     },
@@ -46,33 +65,13 @@ The default environment is production.
 }
 ```
 
-### Update your Brocfile.js
-
-To fingerprint your assets with the options from your `deploy.json` config, update your Brocfile:
-
-```js
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-var env = process.env.EMBER_ENV;
-var deploy = require('./deploy.json')[env];
-var prependString = deploy && deploy.assets ? deploy.assets.assetHost + '/' + deploy.assets.prefix + '/' : '';
-
-var app = new EmberApp({
-  fingerprint: {
-    prepend: prependString,
-  }
-});
-```
-
 ## Usage
 
-The following commands will be made available in your ember-cli project:
+To deploy your application just run
 
-  - `ember deploy` - Builds, uploads assets, notifies index.
-  - `ember deploy:assets` - Uploads assets. Note, this uses whatever is currently in `dist` folder.
-    - this command dumps twice, once to a shared dir and once to a uniq dist dir.
-  - `ember deploy:index` - Notifies back-end of new index. Note this uses whatever is currently in `dist` folder.
+```
+ember deploy --environment=ENV
+```
 
-Options:
+Where ENV is the name of the environment you wish to deploy to.
 
-  - All commands can take an optional `--environment=[env]` flag, to determine which env of your `deploy.json` is used. Default is `production`.
