@@ -25,7 +25,7 @@ You should also setup the admin area and add your application.
 #### Amazon S3
 
 You'll also need to setup a S3 bucket with [static website
-hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
+hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
 
 ## Setup
 
