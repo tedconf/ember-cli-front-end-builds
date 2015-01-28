@@ -24,8 +24,35 @@ You should also setup the admin area and add your application.
 
 #### Amazon S3
 
-You'll also need to setup a S3 bucket with [static website
-hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
+You'll also need to setup a S3 bucket, and allow it to be accessed publicly.  Add a policy such as:
+
+```js
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::MY-BUCKET-NAME}}/*"
+        }
+    ]
+}
+```
+
+#### Ember App Setup
+
+In your App's `Brocfile.js`, you'll want to prepend your asset fingerprinting with your S3 Bucket URL:
+
+```js
+var app = new EmberApp({
+  'fingerprint': {
+    prepend: "https://s3.amazonaws.com/MY-BUCKET-NAME/dist/"
+  }
+});
+
+```
 
 ## Setup
 
