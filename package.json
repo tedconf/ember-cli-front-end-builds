@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-front-end-builds",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -28,8 +28,7 @@
     "ember-data": "1.0.0-beta.10",
     "ember-export-application-global": "^1.0.0",
     "express": "^4.8.5",
-    "glob": "^4.0.5",
-    "sync-exec": "^0.4.0"
+    "glob": "^4.0.5"
   },
   "keywords": [
     "ember-addon"
@@ -43,6 +42,7 @@
     "qs": "^2.3.2",
     "request": "^2.49.0",
     "s3": "^4.3.1",
+    "sync-exec": "^0.4.0",
     "underscore": "^1.7.0"
   }
 }
