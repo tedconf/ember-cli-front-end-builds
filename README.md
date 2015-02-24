@@ -6,8 +6,8 @@ Rails backend.
 The deploy process involves:
 
 1. Creating a build of your ember-cli app
-2. Uploading your assets to S3
-3. Notifying your Rails backend with info about the new build
+1. Uploading your assets to S3
+1. Notifying your Rails backend with info about the new build
 
 ## Installation
 
@@ -35,7 +35,7 @@ You'll also need to setup a S3 bucket, and allow it to be accessed publicly.  Ad
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::MY-BUCKET-NAME}}/*"
+            "Resource": "arn:aws:s3:::MY-BUCKET-NAME/*"
         }
     ]
 }
@@ -83,8 +83,7 @@ TODO
       "app": "[app name, e.g. ted-ed-lesson-creator]",
       "endpoints": [
         "[endpoint to notify, e.g. http://local.ted.com:3000/ted-ed-lesson-creator]"
-      ],
-      "apiKey": "[api key to send along with back-end notification]",
+      ]
     }
   }
 }
