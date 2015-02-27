@@ -51,8 +51,11 @@ var app = new EmberApp({
     prepend: "https://s3.amazonaws.com/MY-BUCKET-NAME/dist/"
   }
 });
-
 ```
+
+Please note that if you are serving assets off S3 and your bucket is
+not in the US Standard region your prepend string should be 
+'https://MY-BUCKET-NAME.s3.amazonaws.com/dist/'.
 
 ## Setup
 
