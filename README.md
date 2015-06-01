@@ -84,6 +84,7 @@ TODO
     },
     "index": {
       "app": "[app name, e.g. ted-ed-lesson-creator]",
+      "client": "optional('mobile' or 'web')",
       "endpoints": [
         "[endpoint to notify, e.g. http://local.ted.com:3000/ted-ed-lesson-creator]"
       ]
