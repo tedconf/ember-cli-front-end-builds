@@ -87,6 +87,9 @@ TODO
       "endpoints": [
         "[endpoint to notify, e.g. http://local.ted.com:3000/ted-ed-lesson-creator]"
       ]
+    },
+    "build": {
+      "environment": "production" // optional, specify if you need an ember-cli build env different from your deploy environment (e.g. use `production` for my staging deploy)
     }
   }
 }
