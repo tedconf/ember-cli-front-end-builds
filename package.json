@@ -44,6 +44,8 @@
     "request": "^2.49.0",
     "s3": "^4.3.1",
     "sync-exec": "^0.4.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "dotenv": "^1.2.0",
+    "silent-error": "^1.0.0"
   }
 }
