@@ -1,5 +1,7 @@
 # ember-cli-front-end-builds
 
+### NOTE: This package is deprecated, in favor of [ember-cli-deploy-front-end-builds-pack](https://github.com/tedconf/ember-cli-deploy-front-end-builds-pack), a new addon for use with [Ember CLI Deploy](http://ember-cli.com/ember-cli-deploy/).
+
 Easily deploy your Ember CLI app to a [front_end_builds](https://github.com/tedconf/front_end_builds)
 Rails backend.
 
