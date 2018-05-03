@@ -11,7 +11,8 @@ The deploy process involves:
 1. Uploading your assets to S3
 1. Notifying your Rails backend with info about the new build
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 ```
 npm install --save-dev ember-cli-front-end-builds

@@ -1,12 +1,11 @@
 'use strict';
 
-var commands = require('./lib/commands');
+var commands = require('./lib/commands').default;
 
 module.exports = {
   name: 'ember-cli-front-end-builds',
 
-  includedCommands: function() {
+  includedCommands() {
     return commands;
   }
 };
-
