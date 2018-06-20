@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-front-end-builds",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "mustache": "^0.8.2",
+    "mustache": "^2.3.0",
     "passwd-user": "^1.1.0",
     "qs": "^2.3.2",
     "request": "^2.49.0",
