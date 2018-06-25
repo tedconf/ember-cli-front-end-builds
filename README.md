@@ -45,13 +45,23 @@ You'll also need to setup a S3 bucket, and allow it to be accessed publicly.  Ad
 
 #### Ember App Setup
 
-In your App's `Brocfile.js`, you'll want to prepend your asset fingerprinting with your S3 Bucket URL:
+In your App's `ember-cli-build.js`, you'll want to prepend your asset fingerprinting with your S3 Bucket URL:
 
 ```js
+var env = process.env.EMBER_ENV;
+var fingerprintOptions = {
+  enabled: true
+};
+switch (env) {
+  case 'development':
+    fingerprintOptions.prepend = 'http://localhost:4200/';
+  break;
+  case 'production':
+    fingerprintOptions.prepend = 'https://s3.amazonaws.com/MY-BUCKET-NAME/dist/';
+  break;
+}
 var app = new EmberApp({
-  'fingerprint': {
-    prepend: "https://s3.amazonaws.com/MY-BUCKET-NAME/dist/"
-  }
+  'fingerprint': fingerprintOptions
 });
 ```
 
@@ -78,8 +88,8 @@ TODO
 {
   "production": {
     "assets": {
-      "accessKeyId": "[your-id]",
-      "secretAccessKey": "[your-key]",
+      "accessKeyId": process.env.ACCESS_KEY_ID,
+      "secretAccessKey": process.env.SECRET_ACCESS_KEY,
       "bucket": "[your-s3-bucket]",
       "prefix": "[optional, dir on S3 to dump all assets]",
       "distPrefix": "[optional, dir on S3 to put `dist` in e.g. dist-{{SHA}}]"
@@ -95,6 +105,19 @@ TODO
     }
   }
 }
+```
+
+### Add .env file in root dir of project
+
+```
+ACCESS_KEY_ID=YOUR-ACCESS-KEY
+SECRET_ACCESS_KEY=YOUR-SECRET-KEY
+```
+
+### Edit `.gitignore`
+
+```
+/.env
 ```
 
 ## Usage
